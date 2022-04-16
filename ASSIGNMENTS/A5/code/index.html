@@ -48,7 +48,7 @@
       var hash = window.location.hash.replace("#","");
       allImages = hash.split(",");
       
-      if(allImages[allImages.length] == "sliding"){
+      if(allImages[allImages.length -1] == "sliding"){
         aniType = "sliding";
       }
       allImages.pop();
@@ -67,9 +67,13 @@
 
       if(aniType == "fading"){
         // complete this
+          allImg0bjs[i].style.opacity = "1";
+          allNum0bjs[i].className = "num active";
       }
       else{
         // complete this
+        allImg0js [i].style.opacity = "0";
+        allNum0bjs.className = "num";
       }
       goToCurrentSlide();
     }
@@ -98,9 +102,11 @@
     var goToCurrentSlide = function(){
       if(aniType == "fading"){
         // complete this
+          allImg0bjs[i].style.display = "block";
       }
       else{
         // complete this
+          allImg0bjs.[i].style.display = "none";
       }
     }
 

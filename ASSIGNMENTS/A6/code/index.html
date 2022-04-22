@@ -101,6 +101,7 @@ function refreshClock()
   if(hash.length == 0){
     hash = "0";
   }
+  hash = document.getElementById("timezone").value;  
   var tzOffset = parseFloat(hash) *60 *60 *1000;
   var utcOffset = now.getTimezoneOffset() * 60 *1000;
   var correctedMSSE = now.getTime() + utcOffset + tzOffset;
@@ -128,7 +129,7 @@ function refreshClock()
 
 </head>
 <body onload='refreshClock();setInterval("refreshClock()", 1000)'>
- <select name="timezone" id="timezone">
+ <select name="timezone" id="timezone" onchange='refreshClock()'>
     <option value="-12">(UTC-12:00) International Date Line West</option>
     <option value="-11">(UTC-11:00) Coordinated Universal Time-11</option>
     <option value="-10">(UTC-10:00) Hawaii</option>
